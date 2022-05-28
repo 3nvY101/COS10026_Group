@@ -89,6 +89,34 @@
                         </li>
                     </ul>
               </li>
+		     <ol>
+                <li>
+                    <p class="elisthead">Checking last visited</p>
+                    <ul>
+                        <li class="elist">
+		    A pretty simple enhancement has been applied using Php 
+				The enhancement is that , the user can check the last time he visited the page. </li>
+			    <li class="elist">
+                            Code used in manage.php
+                            <p class="line"><?php 
+date_default_timezone_set('Australia/Melbourne'); 
+ 
+
+$inTwoMonths = 60 * 60 * 24 * 60 + time();
+setcookie('lastVisit', date("G:i - d/m/y"), $inTwoMonths);
+if(isset($_COOKIE['lastVisit']))
+ 
+{
+$visit = $_COOKIE['lastVisit'];
+echo "<p class='align-center'>Your last visit was - $visit </p>";
+}
+else
+echo "You've got some stale cookies!"; 
+?> </li>
+       <li class="elist"> This enhancement can be found on the <a href="manage.php"> Manage  </a> page. And the reference has ben taken from <a class="infolink" href="https://krazytech.com/programs/php-display-last-visited-date-time#:~:text=%20%20%201%20You%20need%20to%20copy,to%20find%20%E2%80%9CYour%20last%20visited%20time%E2%80%9D.%20More%20">Webpage</a>
+				    </p></li>
+				     </ul>
+			    </li>
         <!--Page content End.-->
 		
         <!--Footer and references. START.-->

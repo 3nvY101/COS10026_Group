@@ -1,3 +1,19 @@
+<?php 
+date_default_timezone_set('Australia/Melbourne'); 
+ 
+
+ 
+$inTwoMonths = 60 * 60 * 24 * 60 + time();
+setcookie('lastVisit', date("G:i - d/m/y"), $inTwoMonths);
+if(isset($_COOKIE['lastVisit']))
+ 
+{
+$visit = $_COOKIE['lastVisit'];
+echo "<p class='align-center'>Your last visit was - $visit </p>";
+}
+else
+echo "You've got some stale cookies!"; 
+?> 
 <?php
 session_start();
 ?>
